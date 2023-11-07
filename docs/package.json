@@ -1,0 +1,11 @@
+{
+  "name": "docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.test.js"
+  },
+  "devDependencies": {
+    "vitepress": "workspace:*"
+  }
+}
