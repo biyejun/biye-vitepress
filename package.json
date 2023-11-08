@@ -10,9 +10,11 @@
   },
   "scripts": {
     "dev": "rimraf dist && node dev.js",
+    "dev:node": "DEV=true pnpm build:node -w",
     "dev:shared": "node scripts/copyShared",
     "docs": "run-p dev docs:dev",
     "docs:dev": "wait-on -d 100 src/node/cli.js && pnpm -F=docs dev",
+    "build:node": "node dev.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "license": "MIT",
