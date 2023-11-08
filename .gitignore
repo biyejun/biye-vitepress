@@ -1,2 +1,3 @@
 node_modules/
-
+/src/client/shared.js
+/src/node/shared.js
