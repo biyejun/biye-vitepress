@@ -5,6 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@8.9.2",
   "author": "biyejun",
+  "bin": {
+    "vitepress": "bin/vitepress.js"
+  },
   "scripts": {
     "dev": "rimraf dist && node dev.js",
     "docs": "run-p dev docs:dev",

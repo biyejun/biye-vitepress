@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node dev.test.js"
+    "dev": "vitepress dev"
   },
   "devDependencies": {
     "vitepress": "workspace:*"
