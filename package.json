@@ -9,14 +9,15 @@
     "vitepress": "bin/vitepress.js"
   },
   "scripts": {
-    "dev": "rimraf dist && node dev.js",
+    "dev": "rimraf dist && run-s dev:shared dev:start",
+    "dev:start": "run-p dev:client dev:node dev:watch",
     "dev:client": "tsc --sourcemap -w -p src/client",
     "dev:node": "DEV=true pnpm build:node -w",
     "dev:shared": "node scripts/copyShared",
     "dev:watch": "node scripts/watchAndCopy",
     "docs": "run-p dev docs:dev",
     "docs:dev": "wait-on -d 100 src/node/cli.js && pnpm -F=docs dev",
-    "build:node": "node dev.js",
+    "build:node": "tsc -p src/node --noEmit && node dev.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "license": "MIT",
