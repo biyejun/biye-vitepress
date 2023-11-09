@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/client",
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "declarationDir": "../../dist/client-types",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["vite/client"],
+    "paths": {
+      "vitepress": ["index.ts"],
+      "vitepress/theme": ["../../theme.d.ts"]
+    }
+  },
+  "include": ["."]
+}
