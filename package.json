@@ -17,21 +17,37 @@
     "dev:watch": "node scripts/watchAndCopy",
     "docs": "run-p dev docs:dev",
     "docs:dev": "wait-on -d 100 src/node/cli.js && pnpm -F=docs dev",
-    "build:node": "tsc -p src/node --noEmit && node dev.js",
+    "build:node": "tsc -p src/node --noEmit && rollup --config rollup.config.ts --configPlugin esbuild",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "chokidar": "^3.5.3",
     "conventional-changelog-cli": "^4.1.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.1.1",
+    "markdown-it-mathjax3": "^4.3.2",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
     "rimraf": "^5.0.5",
+    "rollup": "^4.3.0",
     "typescript": "^5.2.2",
     "wait-on": "^7.1.0"
   },
   "dependencies": {
     "vite": "^4.5.0"
+  },
+  "peerDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "postcss": "^8.4.31"
+  },
+  "peerDependenciesMeta": {
+    "markdown-it-mathjax3": {
+      "optional": true
+    },
+    "postcss": {
+      "optional": true
+    }
   }
 }
