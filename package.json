@@ -15,9 +15,9 @@
     "dev:node": "DEV=true pnpm build:node -w",
     "dev:shared": "node scripts/copyShared",
     "dev:watch": "node scripts/watchAndCopy",
+    "build:node": "tsc -p src/node --noEmit && rollup --config rollup.config.ts --configPlugin esbuild",
     "docs": "run-p dev docs:dev",
     "docs:dev": "wait-on -d 100 src/node/cli.js && pnpm -F=docs dev",
-    "build:node": "tsc -p src/node --noEmit && node rollup.config.ts --configPlugin esbuild",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "license": "MIT",
