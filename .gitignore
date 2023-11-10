@@ -1,4 +1,4 @@
 node_modules/
-/src/client/shared.js
-/src/node/shared.js
+/src/client/shared.ts
+/src/node/shared.ts
 dist/
