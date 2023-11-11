@@ -1,3 +1,5 @@
-console.log('hello node');
+export * from './build/build'
+export * from './init/init'
+export * from './server'
 
-export const val: string = '456'
+export const val: string = 'src node index.ts'

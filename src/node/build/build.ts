@@ -1,0 +1,1 @@
+export const buildVal = 'build.ts'
