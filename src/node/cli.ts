@@ -26,6 +26,8 @@ if (!command || command === 'dev') {
   const createDevServer = async () => {
     const server = await createServer(root);
     await server.listen();
+    logVersion(server.config.logger)
+    server.printUrls()
   };
   createDevServer();
 }
