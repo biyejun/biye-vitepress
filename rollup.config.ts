@@ -79,30 +79,30 @@ const nodeTypes: RollupOptions = {
   plugins: [dts({ respectExternal: true })]
 }
 
-const clientTypes: RollupOptions = {
-  input: r('dist/client-types/index.d.ts'),
-  output: {
-    format: 'esm',
-    file: 'dist/client/index.d.ts'
-  },
-  external: typesExternal,
-  plugins: [
-    dts({ respectExternal: true }),
-    {
-      name: 'cleanup',
-      async closeBundle() {
-        if (PROD) {
-          await fs.rm(r('dist/client-types'), { recursive: true })
-        }
-      }
-    }
-  ]
-}
+// const clientTypes: RollupOptions = {
+//   input: r('dist/client-types/index.d.ts'),
+//   output: {
+//     format: 'esm',
+//     file: 'dist/client/index.d.ts'
+//   },
+//   external: typesExternal,
+//   plugins: [
+//     dts({ respectExternal: true }),
+//     {
+//       name: 'cleanup',
+//       async closeBundle() {
+//         if (PROD) {
+//           await fs.rm(r('dist/client-types'), { recursive: true })
+//         }
+//       }
+//     }
+//   ]
+// }
 
 const config = defineConfig([])
 
 config.push(esmBuild)
 config.push(nodeTypes)
-config.push(clientTypes)
+// config.push(clientTypes)
 
 export default config
